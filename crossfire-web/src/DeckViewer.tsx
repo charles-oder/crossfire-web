@@ -1,3 +1,4 @@
+import { Tooltip } from "@mui/material";
 import Card from "./Card";
 
 type DeckViewerProps = {
@@ -10,17 +11,19 @@ const DeckViewer: React.FC<DeckViewerProps> = (props) => {
   return (
     <div>
       {deck.map((card) => (
-        <img
-          key={card.number}
-          src={
-            "/img/cards/" +
-            props.deckName +
-            "/" +
-            card.number?.padStart(3, "0") +
-            ".jpg"
-          }
-          alt="logo"
-        />
+        <Tooltip key={card.number} title={"" + card.name + ": " + card.text}>
+          <img
+            style={{ width: 200, padding: 5 }}
+            src={
+              "/img/cards/" +
+              props.deckName +
+              "/" +
+              card.number?.padStart(3, "0") +
+              ".jpg"
+            }
+            alt={card.name}
+          />
+        </Tooltip>
       ))}
     </div>
   );

@@ -1,42 +1,47 @@
-import React, { ChangeEvent, Fragment, useState } from "react";
+import {
+  createTheme,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from "@mui/material";
+import { useState } from "react";
 import "./App.css";
 import DeckViewer from "./DeckViewer";
 
 function App() {
   const [deckName, setDeckName] = useState("1st");
 
-  const handleDeckChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    console.log("Selected: " + event.target.value);
+  const handleDeckChange = (event: SelectChangeEvent<string>) => {
     setDeckName(event.target.value);
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <select value={deckName} onChange={handleDeckChange}>
-          <option value="1st">First Edition</option>
-          <option value="2nd">Second Edition</option>
-          <option value="3rd">Third Edition</option>
-          <option value="4th">Fourth Edition</option>
-          <option value="AR">Artifacts</option>
-          <option value="BR">Birthright</option>
-          <option value="CH">Chaos</option>
-          <option value="CQ">Conquest</option>
-          <option value="DE">German Edition</option>
-          <option value="DL">DragonLance</option>
-          <option value="DR">Draconomicon</option>
-          <option value="DU">Dungeons</option>
-          <option value="FR">Forgotten Realms</option>
-          <option value="IQ">Inquisition</option>
-          <option value="MI">Millennium</option>
-          <option value="NO">No Edition</option>
-          <option value="NS">Night Stalkers</option>
-          <option value="PO">Powers</option>
-          <option value="PR">Promo</option>
-          <option value="RL">Ravenloft</option>
-          <option value="RR">Runes & Ruins</option>
-          <option value="UD">The Underdark</option>
-        </select>
+        <Select value={deckName} onChange={handleDeckChange}>
+          <MenuItem value="1st">First Edition</MenuItem>
+          <MenuItem value="2nd">Second Edition</MenuItem>
+          <MenuItem value="3rd">Third Edition</MenuItem>
+          <MenuItem value="4th">Fourth Edition</MenuItem>
+          <MenuItem value="AR">Artifacts</MenuItem>
+          <MenuItem value="BR">Birthright</MenuItem>
+          <MenuItem value="CH">Chaos</MenuItem>
+          <MenuItem value="CQ">Conquest</MenuItem>
+          <MenuItem value="DE">German Edition</MenuItem>
+          <MenuItem value="DL">DragonLance</MenuItem>
+          <MenuItem value="DR">Draconomicon</MenuItem>
+          <MenuItem value="DU">Dungeons</MenuItem>
+          <MenuItem value="FR">Forgotten Realms</MenuItem>
+          <MenuItem value="IQ">Inquisition</MenuItem>
+          <MenuItem value="MI">Millennium</MenuItem>
+          <MenuItem value="NO">No Edition</MenuItem>
+          <MenuItem value="NS">Night Stalkers</MenuItem>
+          <MenuItem value="PO">Powers</MenuItem>
+          <MenuItem value="PR">Promo</MenuItem>
+          <MenuItem value="RL">Ravenloft</MenuItem>
+          <MenuItem value="RR">Runes & Ruins</MenuItem>
+          <MenuItem value="UD">The Underdark</MenuItem>
+        </Select>
         <DeckViewer deckName={deckName} />
       </header>
     </div>
