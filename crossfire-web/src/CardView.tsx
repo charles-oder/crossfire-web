@@ -14,6 +14,11 @@ const CardView: React.FC<CardViewProps> = (props) => {
         props.card.name +
         ": " +
         props.card.text +
+        "(" +
+        props.card.campaign +
+        " " +
+        props.card.type +
+        ")" +
         "[" +
         props.card.tags +
         "]"

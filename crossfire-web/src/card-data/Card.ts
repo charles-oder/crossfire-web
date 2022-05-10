@@ -5,6 +5,8 @@ export default class Card {
   name?: string;
   text?: string;
   rarity?: string;
+  campaign?: string;
+  type?: string;
   tags?: string[];
 }
 
