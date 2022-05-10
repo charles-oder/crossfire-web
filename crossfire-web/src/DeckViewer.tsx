@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "./card-data/Card";
 import CardView from "./CardView";
 
 type DeckViewerProps = {

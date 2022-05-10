@@ -1,4 +1,4 @@
-import Card from "../Card";
+import Card from "./Card";
 import cardData from "./card-data.json";
 
 class CardPack {

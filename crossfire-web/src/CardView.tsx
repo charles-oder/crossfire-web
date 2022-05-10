@@ -1,5 +1,6 @@
 import { Tooltip } from "@mui/material";
-import Card from "./Card";
+import { CampaignSettingUtil } from "./card-data/CampaignSetting";
+import Card, { CardUtil } from "./card-data/Card";
 
 type CardViewProps = {
   card: Card;
@@ -9,7 +10,18 @@ const CardView: React.FC<CardViewProps> = (props) => {
   return (
     <Tooltip
       key={props.card.number}
-      title={"" + props.card.name + ": " + props.card.text}
+      title={
+        "" +
+        props.card.name +
+        ": " +
+        props.card.text +
+        "[" +
+        props.card.campaignSettingCode +
+        "]" +
+        "[" +
+        CardUtil.getCampaignSettingName(props.card) +
+        "]"
+      }
     >
       <img
         style={{ width: 200, padding: 5 }}
